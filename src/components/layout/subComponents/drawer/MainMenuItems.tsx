@@ -18,7 +18,6 @@ import {
 } from "@mui/icons-material";
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import CategoryIcon from "@mui/icons-material/Category";
 import { Link } from "react-router-dom";
@@ -39,13 +38,13 @@ const mainMenuItems: MenuItem[] = [
   {
     text: "Library",
     icon: <LibraryBooksIcon />,
-    route: "/",
+    route: "/library",
   },
-  { text: "Explore", icon: <CategoryIcon />, route: "/" },
+  { text: "Explore", icon: <CategoryIcon />, route: "/explore" },
   {
     text: "Wisdom",
     icon: <AccountBalanceWalletOutlinedIcon />,
-    route: "/",
+    route: "/wisdom",
     subMenuItems: [
       { text: "Transactions", icon: <MonitorHeartOutlinedIcon /> },
       { text: "Invoices", icon: <ReceiptLongOutlinedIcon /> },

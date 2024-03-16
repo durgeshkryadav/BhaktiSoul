@@ -1,0 +1,25 @@
+.card {
+    border: 1px solid #007bff; /* Border color */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    background-color: #17202A; /* Background color */
+  
+    .card-image {
+      height: 200px; /* Adjust height as needed */
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .card-content {
+      padding: 20px;
+    }
+  
+    .card-title {
+      color: #ffffff; /* Title color */
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
+  
