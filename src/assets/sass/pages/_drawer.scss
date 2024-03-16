@@ -1,0 +1,11 @@
+.logo-container{
+    display: flex;
+    .sanatani-logo{
+      margin: 10px auto;
+      width: 90px; 
+      height: 90px; 
+      background-image: url('../../icons//app_logo.svg'); 
+      background-size: contain; 
+      background-repeat: no-repeat; 
+    }
+  }

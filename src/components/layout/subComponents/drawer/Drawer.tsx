@@ -1,7 +1,6 @@
 import { Drawer, Typography, Box } from "@mui/material";
 import MainMenuItems from "./MainMenuItems";
-import OtherMenuItems from "./OtherMenuItems";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import svgicon from "../../../../assets/icons/app_logo.svg";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -22,52 +21,19 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
   return (
     <Drawer
-      variant="persistent"
-      anchor="left"
+      variant='persistent'
+      anchor='left'
       open={isOpen}
       onClose={onClose}
       ModalProps={{
         BackdropProps: {
-          invisible: true, // This will remove the overlay
+          invisible: true,
         },
       }}
-      sx={drawerStyles}
-    >
-      <Box
-        sx={{
-          my: 2,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 2,
-        }}
-      >
-        <AutoAwesomeIcon sx={{ fontSize: "2rem", color: "green" }} />
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Typography
-            variant="h5"
-            sx={{ fontWeight: "bold", textTransform: "none" }}
-          >
-            Lo
-            <Typography
-              component="span"
-              variant="h5"
-              sx={{ fontWeight: "bold", color: "#607274" }}
-            >
-              go
-            </Typography>
-          </Typography>
-          <Typography sx={{ fontSize: "0.65rem", color: "#607274" }}>
-            moto
-          </Typography>
-        </Box>
-      </Box>
+      sx={drawerStyles}>
+      <div className="logo-container">
+        <img src={svgicon} alt='Logo' className='sanatani-logo' />
+      </div>
 
       <MainMenuItems />
       {/* <OtherMenuItems /> */}
@@ -77,8 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           justifyContent: "center",
           position: "relative",
           top: "2%",
-        }}
-      >
+        }}>
         <Box sx={{ textAlign: "center" }}>
           <Typography sx={{ fontSize: "0.7rem", fontWeight: "bold" }}>
             the-sanatani
