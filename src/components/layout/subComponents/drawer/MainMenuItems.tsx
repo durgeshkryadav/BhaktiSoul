@@ -143,7 +143,7 @@ const MenuItemComponent: React.FC<{ item: MenuItem }> = ({ item }) => {
             primary={
               <Typography
                 variant="body2"
-                style={{ fontWeight: "bold", color: "lightslategray" }}
+                style={{ fontSize:"1.5rem", fontWeight: "bold", color: "lightslategray" }}
               >
                 {item.text}
               </Typography>
