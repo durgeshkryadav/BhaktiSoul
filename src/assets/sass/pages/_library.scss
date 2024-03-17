@@ -1,22 +1,37 @@
 //Library
-.library-container{
-    h1{
-        text-align: center;
-        padding: 10px 10px 30px 10px;
-        font-size: 24px;
-    }
+.library-container {
+  @include themed() {
+    background-color: theme-bg-light-blue();
+  }
+  h1 {
+    text-align: center;
+    padding: 10px 10px 30px 10px;
+    font-size: 24px;
+  }
 }
 
 // BookCard.scss
 .book-card {
   width: 300px;
-  border: 1px solid #ccc;
+
+  @include themed() {
+    border: 1px solid theme-bd-silver();
+  }
+
   border-radius: 5px;
   overflow: hidden;
-  background-color: #223a5f; // Decent dark blue background color
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Sharp box shadow
+
+  @include themed() {
+    background-color: theme-bg-decent-dark-blue() // Decent dark blue background color
+  }
+
+  @include themed() {
+    box-shadow: theme-bd-sharp-box-shadow() // Sharp box shadow
+  }
+
   margin-bottom: 20px;
-  transition: filter 0.3s ease, box-shadow 0.3s ease; // Adding transition for smooth effect
+  transition: filter 0.3s ease,
+  box-shadow 0.3s ease; // Adding transition for smooth effect
 
   img {
     width: 100%;
@@ -31,19 +46,35 @@
     h2 {
       font-size: 1.5rem;
       margin-bottom: 10px;
-      color: #fff; // White text color
+
+      @include themed() {
+        color: theme-always-bright(); // White text color
+      }
+
     }
 
     p {
       margin-bottom: 5px;
-      color: #fff; // White text color
+
+      @include themed() {
+        color: theme-always-bright(); // White text color
+      }
+
+      // White text color
     }
   }
 
   &:hover {
     filter: brightness(70%); // Dimming effect on hover
-    background-color: #1c3256; // Darkened background color on hover
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); // Enhanced box shadow on hover
+
+    @include themed() {
+      background-color: theme-bg-darkend-blue(); // Darkened background color on hover
+    }
+
+    @include themed() {
+      box-shadow: 0 8px 16px theme-bd-box-shadow(); // Enhanced box shadow on hover
+    }
+
 
     img {
       filter: brightness(100%); // Prevent image from getting dimmer on hover
@@ -53,7 +84,7 @@
 
 // BooksList.scss
 .book-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }

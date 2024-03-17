@@ -3,6 +3,7 @@ import { BookInterface } from "../../components/Card/BookCard";
 import Pagination from "../../components/Pagination/Pagination";
 import { booksMockData } from "../../mockdata/mocklibrary";
 import { BookList } from "./BookList";
+import { ThemeSwitch } from "../../theme/ThemeSwitch";
 
 export const Library = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -1,24 +1,35 @@
+.theme-switch {
+  width: 25px;
+  height: 25px;
+
+  @include themed() {
+    @include theme-bg-svg($svg_switch_theme, theme-fg-contrast());
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 25px 25px;
+  }
+}
+
 // Styles for buttons
 .button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    
-    &:hover {
-      background-color: #0056b3;
-    }
-  
-    &:focus {
-      outline: none;
-      border-color: #0056b3;
-    }
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
   }
-  
+
+  &:focus {
+    outline: none;
+    border-color: #0056b3;
+  }
+}

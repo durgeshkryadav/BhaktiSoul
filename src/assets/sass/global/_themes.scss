@@ -1,0 +1,222 @@
+//How to use
+// @include themed {
+//   background-color: theme-bg-default();
+//   color: theme-bg-default();
+// }
+
+@import "functions";
+@import "svgs";
+
+$alwaysBright: #ffffff;
+$alwaysDark: #000000;
+$alwaysPurple: #8d0435;
+$alwaysPurpleDim: #fcedfd;
+$borderShadow: #00000040;
+$border: #0000000d;
+
+// font and settings
+$projectTitleFont: "Inter", sans-serif;
+
+$themes: (
+  default: ( //////////////////////// TEXT + ICONS //////////////////////////////
+    fg-default: #272727,
+    fg-contrast: #e0e0e0,
+    fg-highlight: #219cd6,
+    fg-alert: #bd1414,
+    fg-default-hover: #272727,
+    fg-warning: #8d6414,
+    fg-success: #006b44,
+    fg-disabled: #696969,
+    fg-neutral-600: #727272,
+    fg-neutral-800: #393939,
+    fg-links: #146cd3,
+    fg-chip: #146cd3,
+    fg-black: #000000,
+    fg-contrast-hover: #e0e0e0,
+    fg-highlight-hover: #0b7aad,
+    fg-alert-hover: #bd1414,
+    fg-warning-hover: #667300,
+    fg-success-hover: #158b15,
+    fg-disabled-hover: #afafaf,
+    fg-default-dim: #777777,
+    fg-contrast-dim: #c7c7c7,
+    fg-highlight-dim: #60b0d4,
+    fg-alert-dim: #bb5a5a,
+    fg-warning-dim: #99773c,
+    fg-success-dim: #449244,
+    fg-disabled-dim: #acacac,
+    fg-card: #707070,
+    fg-card-contrast: #f5f7f8,
+    //////////////////////// BACKGROUND + BUTTONS //////////////////////////////,
+    bg-default: #ffffff,
+    bg-contrast: #00262c,
+    bg-highlight: #4f72f0,
+    bg-alert: #bd1414,
+    bg-warning: #ffb23b,
+    bg-success: #158b15,
+    bg-disabled: #d1d1d1,
+    bg-field: #f3f3f3,
+    bg-chip: #e0f1fe,
+    bg-default-hover: #9b9b9b,
+    bg-contrast-hover: #00373f,
+    bg-highlight-hover: #3851aa,
+    bg-alert-hover: #bd1414,
+    bg-warning-hover: #fda520,
+    bg-success-hover: #158b15,
+    bg-disabled-hover: #afafaf,
+    bg-field-hover: #f3f3f3,
+    bg-default-dim: #f5f7f8,
+    bg-dropdown: #f2f2f2,
+    bg-contrast-dim: #929292,
+    bg-highlight-dim: #f0f8fd,
+    bg-tags-links: #e0f1fe,
+    bg-alert-dim: #e47373,
+    bg-warning-dim: #fcefc3,
+    bg-success-dim: #7dd17d,
+    bg-disabled-dim: #a8a8a8,
+    bg-success-dimmer: #26cb73,
+    bg-card: #eeeff0,
+    bg-card-contrast: #707070,
+    bg-decent-dark-blue:#223a5f,
+    bg-darkend-blue:#1c3256,
+    bg-light-blue:#ed7b47,
+    //////////////////////// BORDER AND SEPARATION //////////////////////////////,
+    bd-sharp-box-shadow:rgba(0, 0, 0, 0.3),
+    bd-silver:#ccc,
+    bd-box-shadow:rgba(0, 0, 0, 0.3),
+  ),
+  dark: ( //////////////////////// TEXT + ICONS //////////////////////////////
+    fg-default: #b8b8b8,
+    fg-contrast: #444444,
+    fg-highlight: #219cd6,
+    fg-alert: #bd1414,
+    fg-warning: #8d6414,
+    fg-success: #158b15,
+    fg-disabled: #696969,
+    fg-neutral-600: #727272,
+    fg-neutral-800: #393939,
+    fg-links: #146cd3,
+    fg-chip: #146cd3,
+    fg-black: #000000,
+    fg-default-hover: #272727,
+    fg-contrast-hover: #e0e0e0,
+    fg-highlight-hover: #0b7aad,
+    fg-alert-hover: #bd1414,
+    fg-warning-hover: #667300,
+    fg-success-hover: #158b15,
+    fg-disabled-hover: #afafaf,
+    fg-default-dim: #777777,
+    fg-alert-dim: #bb5a5a,
+    fg-highlight-dim: #60b0d4,
+    fg-success-dim: #449244,
+    fg-disabled-dim: #777777,
+    fg-contrast-dim: #adadad,
+    fg-warning-dim: #99773c,
+    fg-card: #707070,
+    //////////////////////// BACKGROUND + BUTTONS //////////////////////////////,
+    bg-default: #242424,
+    bg-contrast: #bebebe,
+    bg-highlight: #219cd6,
+    bg-alert: #bd1414,
+    bg-warning: #ffb23b,
+    bg-success: #158615,
+    bg-disabled: #d1d1d1,
+    bg-field: #d1d1d1,
+    bg-chip: #e0f1fe,
+    bg-default-hover: #ffffff,
+    bg-contrast-hover: #4b4b4b,
+    bg-highlight-hover: #0b7aad,
+    bg-alert-hover: #bd1414,
+    bg-warning-hover: #fda520,
+    bg-success-hover: #158b15,
+    bg-disabled-hover: #afafaf,
+    bg-field-hover: #d1d1d1,
+    bg-default-dim: #e7e7e7,
+    bg-dropdown: #f2f2f2,
+    bg-contrast-dim: #929292,
+    bg-highlight-dim: #fef8fd,
+    bg-tags-links: #e0f1fe,
+    bg-alert-dim: #e47373,
+    bg-warning-dim: #fcefc3,
+    bg-success-dim: #7dd17d,
+    bg-disabled-dim: #a8a8a8,
+    bg-success-dimmer: #26cb73,
+    bg-card: #eeeff0,
+    bg-decent-dark-blue:#999999,
+    bg-darkend-blue:#1c3256,
+    bg-light-blue:#83bcde,
+    //////////////////////// BORDER AND SEPARATION //////////////////////////////,
+    bd-sharp-box-shadow:rgba(232, 74, 17, 0.3),
+    bd-box-shadow:rgba(217, 77, 21, 0.3),
+  ),
+);
+
+@mixin themed() {
+  $theme-map: null !global;
+
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: (
+        ) !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}"
+        );
+      $theme-map: map-merge($theme-map,
+          ($key: $value,
+          )) !global;
+    }
+
+    @content;
+    $theme-map: null !global;
+  }
+}
+}
+
+//methods which is going to use directly
+@function theme-always-bright() {
+  @return $alwaysBright;
+}
+
+@function theme-fg-default() {
+  @return map-get($theme-map, "fg-default");
+}
+@function theme-fg-contrast() {
+  @return map-get($theme-map, "fg-contrast");
+}
+
+@function theme-bg-decent-dark-blue() {
+  @return map-get($theme-map, "bg-decent-dark-blue");
+}
+
+@function theme-bg-darkend-blue() {
+  @return map-get($theme-map, "bg-darkend-blue");
+}
+@function theme-bg-light-blue() {
+  @return map-get($theme-map, "bg-light-blue");
+}
+
+@function theme-bd-sharp-box-shadow() {
+  @return map-get($theme-map, "bd-sharp-box-shadow");
+}
+
+@function theme-bd-box-shadow() {
+  @return map-get($theme-map, "bd-box-shadow");
+}
+
+@function theme-bd-silver() {
+  @return map-get($theme-map, "bd-silver");
+}
+
+@mixin theme-bg-svg($icon, $color) {
+  // Ensure the # symbols are encoded
+  $icon: str-replace(unquote("#{$icon}"), "#", "%23");
+
+  //Replace the currentColor by the themed color
+  $encodedColor: str-replace(unquote("#{$color}"), "#", "%23");
+  $icon: str-replace($icon, "currentColor", $encodedColor);
+  $icon: str-replace($icon, "currentcolor", $encodedColor);
+
+  // Apply the property
+  background-image: url("#{$icon}");
+}
